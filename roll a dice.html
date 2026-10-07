@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Roll</title>
+
+  <style>
+    body {
+     
+      
+
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: rgb(39, 186, 205);
+      padding-top: 80px;
+      background-image: url(dice.png);
+      background-repeat: no-repeat;
+      background-size:cover;
+    }
+
+    .dice {
+      width: 200px;
+      height: 200px;
+      background: rgb(45, 252, 255);
+      border: 3px solid #0cf782;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px auto;
+      font-size: 70px;
+      box-shadow: 0 5px 10px #aaa;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+    #result {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎲 Dice Roller</h1>
+
+  <div class="dice" id="dice">⚀</div>
+
+  <button onclick="rollDice()">Roll Dice</button>
+
+  <p id="result">Click the button to roll the dice.</p>
+ 
+
+  <script>
+    function rollDice() {
+      const number = Math.floor(Math.random() * 6) + 1;
+
+      const diceFaces = ["🕹️", "💻", "🎲", "🌍", "🎮", "🎰"];
+
+      document.getElementById("dice").textContent = diceFaces[number - 1];
+      document.getElementById("result").textContent =
+        "You rolled: " + number;
+    }
+  </script>
+
+</body>
+</html>
